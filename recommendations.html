@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations for {{ movie }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Recommendations for {{ movie }}</h1>
+    <div>
+        {% for name, poster in recommendations %}
+            <div style="display:inline-block; text-align:center; margin:10px;">
+                <h2>{{ name }}</h2>
+                <img src="{{ poster }}" alt="{{ name }} poster" style="width:200px;">
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/">Go Back</a>
+</body>
+</html>
